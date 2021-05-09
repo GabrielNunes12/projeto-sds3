@@ -1,4 +1,4 @@
 export type SaleSum = {
-  sellerName: String,
-  sum: Number
+  sellerName: string;
+  sum: number;
 }
