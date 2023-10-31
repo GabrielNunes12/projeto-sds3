@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { SalePage } from "types/seller";
 import { formatLocalDate } from "utils/formatter";
-import { BASE_URL } from "utils/requests";
 import Pagination from "./Pagination";
 
 const DataTable = () => {
@@ -18,7 +17,7 @@ const DataTable = () => {
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/sales?page=${activePage}&size=5&sort=id,desc`).then((res) => {
+    axios.get(`${process.env.BASE_URL}/sales?page=${activePage}&size=5&sort=id,desc`).then((res) => {
       const { data } = res;
       setPage(data);
     });
